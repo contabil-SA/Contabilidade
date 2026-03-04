@@ -115,11 +115,6 @@ body {
     color: var(--primary-color);
 }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
 
 .bar {
     width: 25px;
@@ -382,6 +377,12 @@ body {
 
 .service-link:hover {
     color: #128C7E;
+}
+
+
+/* Focus */
+:focus-visible{
+    outline-offset: 2px;
 }
 
 /* Benefícios Section */

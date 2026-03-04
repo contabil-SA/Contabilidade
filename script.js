@@ -58,13 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Menu Mobile Toggle
-const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
 
 // Close menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(link => {
@@ -85,6 +80,7 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
@@ -153,44 +149,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Form validation (if contact form is added in the future)
-function validateForm(form) {
-    let isValid = true;
-    const inputs = form.querySelectorAll('input, textarea');
-    
-    inputs.forEach(input => {
-        if (input.hasAttribute('required') && !input.value.trim()) {
-            isValid = false;
-            input.classList.add('error');
-        } else {
-            input.classList.remove('error');
-        }
-    });
-    
-    return isValid;
-}
-
-// Add active state to navigation based on scroll position
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-        
-        if (navLink) {
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navLink.classList.add('active');
-            } else {
-                navLink.classList.remove('active');
-            }
-        }
-    });
-});
-
 // Counter animation for statistics (if needed)
 function animateCounter(element, target, duration = 2000) {
     const start = 0;
@@ -207,29 +165,6 @@ function animateCounter(element, target, duration = 2000) {
     }, 16);
 }
 
-// Lazy loading for images
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src || img.src;
-                img.classList.remove('lazy');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
-
-// Print functionality
-function printPage() {
-    window.print();
-}
-
 // Accessibility improvements
 document.addEventListener('DOMContentLoaded', () => {
     // Add ARIA labels for better screen reader support
@@ -242,8 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const focusableElements = document.querySelectorAll('a, button, input, textarea, select');
     focusableElements.forEach(element => {
         element.addEventListener('focus', () => {
-            element.style.outline = '2px solid var(--accent-color)';
-            element.style.outlineOffset = '2px';
         });
         
         element.addEventListener('blur', () => {
@@ -271,6 +204,3 @@ const debouncedScroll = debounce(() => {
 }, 100);
 
 window.addEventListener('scroll', debouncedScroll);
-
-// Console log for debugging
-console.log('Contabilidade Pro Site - Carregado com sucesso!');
