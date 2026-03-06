@@ -59,6 +59,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
 }
 
 .logo {
@@ -76,6 +78,7 @@ body {
     font-weight: 700;
     color: var(--primary-color);
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .logo-accent {
@@ -178,6 +181,7 @@ body {
 .cta-button {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     padding: 1rem 2rem;
     text-decoration: none;
@@ -187,6 +191,7 @@ body {
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    white-space: nowrap;
 }
 
 .cta-button.primary {
@@ -215,6 +220,10 @@ body {
 .cta-button.large {
     padding: 1.2rem 2.5rem;
     font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
 }
 
 /* Prova Local Section */
@@ -252,8 +261,16 @@ body {
 
 .proof-feature i {
     color: var(--primary-color);
-    font-size: 1.2rem;
-    width: 24px;
+    font-size: 1.5rem;
+    width: 40px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.proof-feature span {
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
 }
 
 .office-placeholder {
@@ -381,7 +398,7 @@ body {
 
 
 /* Focus */
-:focus-visible{
+:focus-visible {
     outline-offset: 2px;
 }
 
@@ -394,8 +411,10 @@ body {
 .benefits-grid {
     display: flex;
     gap: 2rem;
-    flex-wrap: nowrap; /* impede quebra de linha */
-    justify-content: space-between; /* distribui espaço entre os cards */
+    flex-wrap: nowrap;
+    /* impede quebra de linha */
+    justify-content: space-between;
+    /* distribui espaço entre os cards */
 }
 
 .benefit-card {
@@ -533,106 +552,106 @@ body {
 
 /* FAQ Section - Accordion Style */
 .faq-section {
-  padding: 80px 0;
-  background: var(--bg-light);
+    padding: 80px 0;
+    background: var(--bg-light);
 }
 
 .faq-section .container {
-  max-width: 800px;
+    max-width: 800px;
 }
 
 .faq-accordion {
-  margin-top: 2rem;
+    margin-top: 2rem;
 }
 
 .faq-item {
-  background: var(--bg-white);
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-  transition: all 0.3s ease;
+    background: var(--bg-white);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .faq-item:hover {
-  box-shadow: var(--shadow-md);
-  border-color: var(--accent-color);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-color);
 }
 
 .faq-question {
-  padding: 1.5rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.3s ease;
-  user-select: none;
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    user-select: none;
 }
 
 .faq-question:hover {
-  background: linear-gradient(90deg, #f8f9fa 0%, #ffffff 100%);
+    background: linear-gradient(90deg, #f8f9fa 0%, #ffffff 100%);
 }
 
 .faq-question h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  flex: 1;
-  padding-right: 1rem;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    flex: 1;
+    padding-right: 1rem;
 }
 
 .faq-arrow {
-  color: var(--accent-color);
-  transition: transform 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
 }
 
 .faq-item.active .faq-arrow {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-  padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 1.5rem;
 }
 
 .faq-item.active .faq-answer {
-  max-height: 300px;
-  padding: 0 1.5rem 1.5rem 1.5rem;
+    max-height: 800px;
+    padding: 0 1.5rem 1.5rem 1.5rem;
 }
 
 .faq-answer p {
-  margin: 0;
-  color: var(--text-light);
-  line-height: 1.6;
-  font-size: 0.95rem;
+    margin: 0;
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 /* Responsividade */
 @media screen and (max-width: 768px) {
-  .faq-question {
-    padding: 1.2rem;
-  }
-  
-  .faq-question h3 {
-    font-size: 1rem;
-  }
-  
-  .faq-answer p {
-    font-size: 0.9rem;
-  }
-  
-  .faq-item.active .faq-answer {
-    padding: 0 1.2rem 1.2rem 1.2rem;
-  }
+    .faq-question {
+        padding: 1.2rem;
+    }
+
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+
+    .faq-answer p {
+        font-size: 0.9rem;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 0 1.2rem 1.2rem 1.2rem;
+    }
 }
 
 /* Contato Section */
@@ -676,7 +695,8 @@ body {
 
 .contact-map {
     width: 100%;
-    height: 450px; /* ALTERADO: altura fixa em vez de min-height */
+    height: 450px;
+    /* ALTERADO: altura fixa em vez de min-height */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-md);
@@ -687,7 +707,8 @@ body {
     width: 100%;
     height: 100%;
     border: 0;
-    display: block; /* Remove espaço invisível do iframe */
+    display: block;
+    /* Remove espaço invisível do iframe */
 }
 
 
@@ -722,8 +743,10 @@ body {
     }
 
     .contact-map {
-        height: 350px; /* Altura menor no mobile */
-        order: 2; /* Fica abaixo das informações */
+        height: 350px;
+        /* Altura menor no mobile */
+        order: 2;
+        /* Fica abaixo das informações */
     }
 
 }
@@ -751,6 +774,12 @@ body {
 .cta-final .cta-button {
     background: var(--accent-color);
     color: var(--bg-white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
 }
 
 .cta-final .cta-button:hover {
@@ -840,6 +869,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -851,7 +881,7 @@ body {
     .hamburger {
         display: flex;
     }
-    
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -864,37 +894,39 @@ body {
         box-shadow: var(--shadow-md);
         padding: 2rem 0;
     }
-    
+
     .nav-menu.active {
         left: 0;
     }
-    
+
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     /* Ajuste da Seção de Prova/Imagem */
     .proof-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .proof-image {
-        order: -1; /* Garante que a foto do escritório apareça antes do texto */
-        aspect-ratio: 16 / 9; /* Formato ideal para tablets/telemóveis */
+        order: -1;
+        /* Garante que a foto do escritório apareça antes do texto */
+        aspect-ratio: 16 / 9;
+        /* Formato ideal para tablets/telemóveis */
     }
-    
+
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
-    
+
     .cta-button {
         width: 100%;
         max-width: 300px;
@@ -906,38 +938,415 @@ body {
     .hero-title {
         font-size: 2rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .container {
         padding: 0 15px;
     }
-    
+
     .hero {
         padding: 80px 15px 50px;
     }
 
     .proof-image {
-        aspect-ratio: 16 / 9; /* Mantém a proporção estável no telemóvel pequeno */
+        aspect-ratio: 16 / 9;
+        /* Mantém a proporção estável no telemóvel pequeno */
     }
-    
-    .proof-section, .services-section, .benefits-section, 
-    .target-section, .process-section, .faq-section, 
-    .contact-section, .cta-final {
-        padding: 40px 0; /* Reduzi levemente para melhor leitura no mobile */
+
+    .proof-section,
+    .services-section,
+    .benefits-section,
+    .target-section,
+    .process-section,
+    .faq-section,
+    .contact-section,
+    .cta-final {
+        padding: 40px 0;
+        /* Reduzi levemente para melhor leitura no mobile */
     }
-    
+
     .cta-final h2 {
-        font-size: 1.8rem; /* Ajuste fino para não quebrar em ecrãs muito pequenos */
+        font-size: 1.8rem;
+        /* Ajuste fino para não quebrar em ecrãs muito pequenos */
     }
-    
+
     .whatsapp-button {
         bottom: 20px;
         right: 20px;
         width: 50px;
         height: 50px;
         font-size: 1.3rem;
+    }
+}
+
+/* --- AJUSTES PARA DISPOSITIVOS MÓVEIS --- */
+@media (max-width: 768px) {
+
+    /* 1. Ajuste do Título Principal */
+    .hero-title {
+        font-size: 2.2rem;
+        /* Diminui para não vazar da tela */
+        padding-top: 20px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    /* 2. Menu de Navegação */
+    .nav-container {
+        flex-direction: column;
+        /* Logo em cima, links embaixo */
+        gap: 10px;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+        font-size: 0.9rem;
+        justify-content: center;
+        padding-bottom: 10px;
+    }
+
+    /* 3. Seção "Sobre Nós" (Prova Local) */
+    .proof-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .proof-features {
+        display: inline-block;
+        /* Faz o container envolver apenas o conteúdo */
+        text-align: left;
+        /* Mantém ícone e texto alinhados entre si */
+        margin: 0 auto;
+        /* Centraliza o bloco na tela */
+    }
+
+    .proof-feature {
+        display: flex;
+        align-items: center;
+        /* Alinha o ícone verticalmente ao centro do texto */
+        gap: 15px;
+        /* Espaço consistente entre ícone e texto */
+        margin-bottom: 15px;
+        /* Espaçamento entre as linhas */
+    }
+
+    .proof-feature i {
+        width: 25px;
+        /* Largura fixa para os ícones não "dançarem" */
+        text-align: center;
+        /* Centraliza o ícone dentro da largura fixa */
+    }
+
+    .proof-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 4. Seção de Benefícios (Onde estava o erro do nowrap) */
+    .benefits-grid {
+        flex-direction: column;
+        /* Empilha os cards */
+        flex-wrap: wrap;
+        /* Permite quebra de linha */
+    }
+
+    /* 5. Ajustes de Espaçamento Geral */
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        /* Botões um sobre o outro */
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .cta-button {
+        width: 100%;
+        /* Botões largos no celular são mais fáceis de clicar */
+        justify-content: center;
+    }
+}
+
+/* --- HAMBURGER MENU STYLES --- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+    transform: translateX(10px);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-7px, -7px);
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .nav-container {
+        display: flex;
+        flex-direction: row;       /* Garante que fiquem na mesma linha */
+        justify-content: space-between; /* Empurra um para cada lado */
+        align-items: center;      /* Alinha verticalmente ao centro */
+        width: 100%;
+        padding: 0 20px;          /* Espaçamento lateral para não colarem na borda */
+    }
+    .hamburger {
+        display: flex;
+        margin-left: auto;        /* Reforça o alinhamento à direita */
+    }
+
+    .navbar {
+        padding: 0.8rem 0;
+    }
+
+    .logo-text {
+        font-size: 1.3rem;
+    }
+
+
+    .hamburger .bar {
+        width: 22px;
+        height: 2.5px;
+        margin: 4px 0;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--bg-white);
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+        box-shadow: var(--shadow-md);
+        padding: 2rem 0;
+        z-index: 1000;
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 1.2rem 0;
+        font-size: 1rem;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    /* Font Sizes for Mobile */
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.15;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .service-list li {
+        font-size: 0.9rem;
+    }
+
+    .benefit-card h3 {
+        font-size: 1rem;
+    }
+
+    .benefit-card p {
+        font-size: 0.9rem;
+    }
+
+    .target-card h3 {
+        font-size: 1rem;
+    }
+
+    .target-card p {
+        font-size: 0.85rem;
+    }
+
+    .step-content h3 {
+        font-size: 1.05rem;
+    }
+
+    .step-content p {
+        font-size: 0.9rem;
+    }
+
+    .faq-question h3 {
+        font-size: 0.95rem;
+    }
+
+    .faq-answer p {
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+        max-height: 900px;
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+
+    /* Spacing Adjustments */
+    .services-section,
+    .benefits-section,
+    .target-section,
+    .process-section,
+    .faq-section,
+    .contact-section {
+        padding: 50px 0;
+    }
+
+    .cta-button {
+        padding: 0.9rem 1.8rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 1rem 0;
+    }
+
+    .hero {
+        padding: 70px 15px 40px;
+        min-height: 80vh;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+
+    .services-grid,
+    .target-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card,
+    .target-card,
+    .benefit-card {
+        padding: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .cta-final h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .cta-final p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-final .cta-button {
+        width: 100%;
+        max-width: 280px;
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .faq-question {
+        padding: 1rem;
+    }
+
+    .faq-question h3 {
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    .faq-item.active .faq-answer {
+        max-height: 1000px;
+        padding: 0 1rem 1rem 1rem;
+    }
+
+    .faq-answer p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    .whatsapp-button {
+        bottom: 15px;
+        right: 15px;
+        width: 55px;
+        height: 55px;
+    }
+
+    .proof-section,
+    .services-section,
+    .benefits-section,
+    .target-section,
+    .process-section,
+    .faq-section,
+    .contact-section,
+    .cta-final {
+        padding: 40px 0;
     }
 }

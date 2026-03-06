@@ -57,17 +57,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Menu Mobile Toggle
-const navMenu = document.querySelector('.nav-menu');
+// Menu Mobile Toggle (Hamburger Menu)
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-link');
 
+    // Toggle menu when hamburger is clicked
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
 
-// Close menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (hamburger) {
+                hamburger.classList.remove('active');
+            }
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (hamburger && navMenu) {
+            if (!e.target.closest('.navbar')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        }
     });
 });
+
 
 // Scroll animations
 const observerOptions = {
