@@ -908,11 +908,6 @@ body {
         gap: 2rem;
     }
 
-    .proof-image {
-        order: -1;
-        aspect-ratio: 16 / 9;
-    }
-
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -949,6 +944,7 @@ body {
     }
 
     .proof-image {
+        order: -1;
         aspect-ratio: 16 / 9;
     }
 
@@ -1325,4 +1321,8 @@ body {
     .cta-final {
         padding: 40px 0;
     }
+}
+
+    .proof-image :hover {
+       box-shadow: 0 0 18px var(--primary-color);
 }
