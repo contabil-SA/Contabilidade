@@ -903,7 +903,6 @@ body {
         font-size: 2.5rem;
     }
 
-    /* Ajuste da Seção de Prova/Imagem */
     .proof-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -911,9 +910,7 @@ body {
 
     .proof-image {
         order: -1;
-        /* Garante que a foto do escritório apareça antes do texto */
         aspect-ratio: 16 / 9;
-        /* Formato ideal para tablets/telemóveis */
     }
 
     .contact-content {
@@ -953,7 +950,6 @@ body {
 
     .proof-image {
         aspect-ratio: 16 / 9;
-        /* Mantém a proporção estável no telemóvel pequeno */
     }
 
     .proof-section,
@@ -965,12 +961,10 @@ body {
     .contact-section,
     .cta-final {
         padding: 40px 0;
-        /* Reduzi levemente para melhor leitura no mobile */
     }
 
     .cta-final h2 {
         font-size: 1.8rem;
-        /* Ajuste fino para não quebrar em ecrãs muito pequenos */
     }
 
     .whatsapp-button {
@@ -985,10 +979,8 @@ body {
 /* --- AJUSTES PARA DISPOSITIVOS MÓVEIS --- */
 @media (max-width: 768px) {
 
-    /* 1. Ajuste do Título Principal */
     .hero-title {
         font-size: 2.2rem;
-        /* Diminui para não vazar da tela */
         padding-top: 20px;
     }
 
@@ -999,7 +991,6 @@ body {
     /* 2. Menu de Navegação */
     .nav-container {
         flex-direction: column;
-        /* Logo em cima, links embaixo */
         gap: 10px;
     }
 
@@ -1010,7 +1001,6 @@ body {
         padding-bottom: 10px;
     }
 
-    /* 3. Seção "Sobre Nós" (Prova Local) */
     .proof-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1019,28 +1009,20 @@ body {
 
     .proof-features {
         display: inline-block;
-        /* Faz o container envolver apenas o conteúdo */
         text-align: left;
-        /* Mantém ícone e texto alinhados entre si */
         margin: 0 auto;
-        /* Centraliza o bloco na tela */
     }
 
     .proof-feature {
         display: flex;
         align-items: center;
-        /* Alinha o ícone verticalmente ao centro do texto */
         gap: 15px;
-        /* Espaço consistente entre ícone e texto */
         margin-bottom: 15px;
-        /* Espaçamento entre as linhas */
     }
 
     .proof-feature i {
         width: 25px;
-        /* Largura fixa para os ícones não "dançarem" */
         text-align: center;
-        /* Centraliza o ícone dentro da largura fixa */
     }
 
     .proof-image img {
@@ -1048,29 +1030,23 @@ body {
         height: auto;
     }
 
-    /* 4. Seção de Benefícios (Onde estava o erro do nowrap) */
     .benefits-grid {
         flex-direction: column;
-        /* Empilha os cards */
         flex-wrap: wrap;
-        /* Permite quebra de linha */
     }
 
-    /* 5. Ajustes de Espaçamento Geral */
     .section-title {
         font-size: 2rem;
     }
 
     .hero-buttons {
         flex-direction: column;
-        /* Botões um sobre o outro */
         width: 100%;
         padding: 0 20px;
     }
 
     .cta-button {
         width: 100%;
-        /* Botões largos no celular são mais fáceis de clicar */
         justify-content: center;
     }
 }
@@ -1112,15 +1088,15 @@ body {
 @media (max-width: 768px) {
     .nav-container {
         display: flex;
-        flex-direction: row;       /* Garante que fiquem na mesma linha */
-        justify-content: space-between; /* Empurra um para cada lado */
-        align-items: center;      /* Alinha verticalmente ao centro */
+        flex-direction: row;       
+        justify-content: space-between; 
+        align-items: center;      
         width: 100%;
-        padding: 0 20px;          /* Espaçamento lateral para não colarem na borda */
+        padding: 0 20px;       
     }
     .hamburger {
         display: flex;
-        margin-left: auto;        /* Reforça o alinhamento à direita */
+        margin-left: auto;        
     }
 
     .navbar {
