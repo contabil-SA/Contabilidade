@@ -1,0 +1,187 @@
+/* Fundo fotográfico do Hero */
+@media (max-width: 639px) {
+  .hero {
+    background-position: 62% center;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE — aprimoramentos progressivos (mobile-first)
+   A base (fora de media query, nos outros arquivos) já é o layout mobile.
+   Aqui só entram os ajustes para telas maiores, organizados por breakpoint
+   e depois por seção/componente, para ser fácil de achar o que precisar mudar.
+   ========================================================================== */
+
+/* ==========================================================================
+   ≥ 640px — telas grandes de celular / phablets
+   ========================================================================== */
+@media (min-width: 640px) {
+  :root {
+    --container-padding: 1.5rem;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+  }
+
+  .services-grid,
+  .target-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================================================
+   ≥ 768px — tablets
+   ========================================================================== */
+@media (min-width: 768px) {
+  :root {
+    --container-padding: 2rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1.1fr 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .hero-meta {
+    gap: var(--space-2xl);
+  }
+
+  .divided-list-item {
+    align-items: center;
+  }
+}
+
+/* ==========================================================================
+   ≥ 1024px — desktop
+   ========================================================================== */
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 80px;
+  }
+
+  .header {
+    height: var(--header-height);
+  }
+
+  .hero {
+    min-height: calc(100vh - var(--header-height));
+    padding-block: calc(var(--header-height) + var(--space-3xl)) var(--space-3xl);
+  }
+
+  /* Navegação desktop substitui o menu hambúrguer */
+  .hamburger {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+    max-height: none;
+    visibility: visible;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-lg);
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    overflow: visible;
+    transition: none;
+  }
+
+  .nav-menu li {
+    border-top: 0;
+  }
+
+  .nav-link {
+    padding: var(--space-2xs) 0;
+  }
+
+  .nav-link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background: var(--color-accent);
+    transition: width var(--transition-fast);
+  }
+
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after {
+    width: 100%;
+  }
+
+  .header .nav-cta {
+    display: inline-flex;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .target-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 1.2rem;
+
+    align-items: stretch;
+  }
+
+
+  .footer-content {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+}
+
+/* ==========================================================================
+   ≥ 1280px — desktop grande
+   ========================================================================== */
+@media (min-width: 1280px) {
+  .hero-content {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .target-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .target-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chip {
+    padding: 1.5rem;
+  }
+
+  .chip-content {
+    margin-top: 1.5rem;
+  }
+
+  .chip-content p:last-child {
+    margin-top: 1.25rem;
+  }
+}
+
+.section-head--center {
+  max-width: 850px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-head--center .section-title {
+  max-width: 850px;
+  margin-inline: auto;
+}

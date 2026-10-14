@@ -1,0 +1,462 @@
+/* ==========================================================================
+   COMPONENTS — peças reutilizáveis em várias seções
+   Regras base = mobile. Ajustes para telas maiores ficam em responsive.css.
+   ========================================================================== */
+
+/* ---- Botões ----------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xs);
+  padding: 0.9rem 1.6rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  line-height: 1.2;
+  transition: background-color var(--transition-fast), color var(--transition-fast),
+    border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: var(--color-accent-dark);
+  color: var(--color-text-on-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-text-on-dark);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+}
+
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-text-on-dark);
+}
+
+.btn--lg {
+  padding: 1.1rem 2.2rem;
+  font-size: var(--fs-md);
+}
+
+/* ---- Badge de ícone ----------------------------------------------------------- */
+.icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--color-ink-tint);
+  color: var(--color-ink);
+  flex-shrink: 0;
+}
+
+.icon-badge svg {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-badge--on-dark {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-text-on-dark);
+}
+
+/* ---- Card genérico (serviços) -------------------------------------------------- */
+.card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  font-size: var(--fs-lg);
+  margin-block: var(--space-md) var(--space-sm);
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  margin-bottom: var(--space-md);
+}
+
+.card-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-snug);
+}
+
+.card-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 7px;
+  height: 7px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+}
+
+.card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  color: var(--color-ink-soft);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  margin-top: auto;
+  transition: color var(--transition-fast), gap var(--transition-fast);
+}
+
+.card-cta svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-accent-dark);
+  flex-shrink: 0;
+}
+
+.card-cta:hover,
+.card-cta:focus-visible {
+  color: var(--color-accent-dark);
+  gap: var(--space-xs);
+}
+
+/* ---- Lista dividida (benefícios) ------------------------------------------------ */
+.divided-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.divided-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding-block: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.divided-list-item:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.divided-list-item h3 {
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-3xs);
+}
+
+.divided-list-item p {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+}
+
+/* ---- Público-alvo / Chips ------------------------------------------------ */
+
+.chip {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  padding: 2.2rem 2.5rem;
+
+  background: var(--color-paper);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  min-height: 100%;
+
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+.chip:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+
+/* Cabeçalho do card: ícone + título */
+
+.chip-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  min-height: 50px;
+}
+
+.chip .icon-badge {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 14px;
+
+  background: var(--color-ink-tint);
+  color: var(--color-ink);
+
+  flex-shrink: 0;
+}
+
+.chip .icon-badge svg {
+  width: 27px;
+  height: 27px;
+}
+
+
+/* Título */
+
+.chip h3 {
+  margin: 0;
+
+  color: var(--color-ink);
+
+  font-size: clamp(1.1rem, 1vw, 1rem);
+  font-weight: var(--fw-semibold);
+  line-height: 1;
+}
+
+
+/* Conteúdo */
+
+.chip-content {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 2.25rem;
+}
+
+.chip-content p {
+  margin: 0;
+}
+
+
+/* Frase principal */
+
+.chip-content .chip-highlight {
+  color: var(--color-ink);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  line-height: 1.5;
+}
+
+/* Descrição */
+.chip-content p:last-child {
+  margin-top: 2rem;
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-normal);
+  line-height: 1.65;
+}
+
+
+/* ---- Processo (sequência numerada) ----------------------------------------------- */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  gap: var(--space-md);
+  padding-block: var(--space-md);
+  position: relative;
+}
+
+.step-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--color-ink);
+  color: var(--color-text-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  flex-shrink: 0;
+}
+
+.step-line {
+  flex: 1;
+  width: 2px;
+  background: var(--color-border);
+  margin-block: var(--space-2xs);
+}
+
+.step:last-child .step-line {
+  display: none;
+}
+
+.step-content h3 {
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-3xs);
+}
+
+.step-content p {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+}
+
+/* ---- FAQ acessível ----------------------------------------------------------------- */
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  text-align: left;
+  padding-block: var(--space-md);
+  font-family: var(--font-body);
+}
+
+.faq-trigger h3 {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+  color: var(--color-ink);
+}
+
+.faq-trigger svg {
+  width: 22px;
+  height: 22px;
+  color: var(--color-accent-dark);
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+
+.faq-item.is-open .faq-trigger svg {
+  transform: rotate(180deg);
+}
+
+.faq-panel-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--transition-base);
+}
+
+.faq-item.is-open .faq-panel-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.faq-panel {
+  overflow: hidden;
+}
+
+.faq-panel p {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  padding-bottom: var(--space-md);
+  max-width: 68ch;
+}
+
+.faq-panel strong {
+  color: var(--color-text);
+}
+
+/* ---- Botão flutuante do WhatsApp ------------------------------------------------------ */
+.whatsapp-fab {
+  position: fixed;
+  right: max(var(--space-md), env(safe-area-inset-right));
+  bottom: max(var(--space-md), env(safe-area-inset-bottom));
+  z-index: var(--z-whatsapp);
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: var(--color-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.whatsapp-fab svg {
+  width: 28px;
+  height: 28px;
+}
+
+.whatsapp-fab:hover,
+.whatsapp-fab:focus-visible {
+  background: var(--color-accent-dark);
+  color: var(--color-text-on-dark);
+  transform: scale(1.06);
+}
+
+.whatsapp-fab::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+  animation: fab-pulse 2.8s ease-out infinite;
+}
+/* ---- Botão WhatsApp -------------------------------------------------------- */
+
+.btn--whatsapp {
+  background: var(--color-accent);
+  color: #ffffff;
+  border: 1px solid var(--color-accent);
+}
+
+.btn--whatsapp:hover,
+
+.btn--whatsapp:focus-visible {
+  background: var(--color-accent-dark);
+  color: #ffffff;
+  border-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--whatsapp svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}

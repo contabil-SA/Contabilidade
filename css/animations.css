@@ -1,0 +1,98 @@
+/* ==========================================================================
+   ANIMATIONS — keyframes e comportamento de entrada
+   Todas as animações são discretas e respeitam prefers-reduced-motion.
+   ========================================================================== */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fab-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* ---- Entrada do Hero (sequência orquestrada, não solta) --------------------- */
+.hero-eyebrow,
+.hero-title,
+.hero-subtitle,
+.hero-actions,
+.hero-meta {
+  animation: fade-in-up 0.7s var(--ease) both;
+}
+
+.hero-title {
+  animation-delay: 0.08s;
+}
+
+.hero-subtitle {
+  animation-delay: 0.16s;
+}
+
+.hero-actions {
+  animation-delay: 0.24s;
+}
+
+.hero-meta {
+  animation-delay: 0.32s;
+}
+
+/* ---- Revelação ao rolar (controlada por scroll-reveal.js) -------------------
+   Importante: o estado oculto só existe quando a classe .js (adicionada por um
+   script síncrono no <head>) está presente no <html>. Sem JavaScript — ou se o
+   carregamento do módulo falhar por qualquer motivo — o conteúdo permanece
+   visível por padrão, em vez de ficar preso em opacity: 0 para sempre. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Impressão / "Salvar como PDF" sempre mostra tudo, independentemente do
+   quanto a página já foi rolada. */
+@media print {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ---- Movimento reduzido ------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .whatsapp-fab::after {
+    display: none;
+  }
+}

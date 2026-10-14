@@ -1,0 +1,84 @@
+/* ==========================================================================
+   DESIGN TOKENS — SA Contabilidade
+   --------------------------------------------------------------------------
+   Ponto único de verdade para cor, tipografia, espaçamento, raio e sombra.
+   Para trocar a identidade visual no futuro (ex.: cores), este é o único
+   arquivo que precisa ser editado — nada de valores soltos pelo resto do CSS.
+   ========================================================================== */
+
+:root {
+  /* ---- Cor · marca ------------------------------------------------------ */
+  --color-ink: #142441;            /* marinho principal: títulos, fundos escuros */
+  --color-ink-soft: #2b4a72;       /* marinho médio: hover, elementos secundários */
+  --color-ink-tint: #eef1f6;       /* tinta bem diluída: fundos de ícone, badges */
+  --color-accent: #25d366;         /* verde WhatsApp — usar com moderação */
+  --color-accent-dark: #159a4a;    /* verde escurecido: hover/estado ativo */
+
+  /* ---- Cor · superfícies e texto ----------------------------------------- */
+  --color-paper: #ffffff;
+  --color-surface: #f3f5f9;        /* fundo alternado entre seções */
+  --color-border: #e1e6ed;
+  --color-border-strong: #cbd3df;
+  --color-text: #1d2733;
+  --color-text-muted: #5b6b80;
+  --color-text-on-dark: #ffffff;
+  --color-text-on-dark-muted: rgba(255, 255, 255, 0.78);
+
+  /* ---- Tipografia --------------------------------------------------------- */
+  --font-display: "Space Grotesk", "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", "Segoe UI", Roboto, sans-serif;
+
+  --fs-xs: 0.8125rem;      /* 13px — legendas, rótulos pequenos */
+  --fs-sm: 0.9375rem;      /* 15px — texto secundário */
+  --fs-base: 1rem;         /* 16px — corpo padrão */
+  --fs-md: 1.125rem;       /* 18px — subtítulos curtos */
+  --fs-lg: 1.375rem;       /* 22px — títulos de card */
+  --fs-xl: clamp(1.5rem, 1.25rem + 1.1vw, 2rem);       /* títulos de seção */
+  --fs-2xl: clamp(1.875rem, 1.4rem + 2vw, 2.75rem);    /* título CTA final */
+  --fs-3xl: clamp(2.25rem, 1.4rem + 3.6vw, 3.5rem);    /* título do Hero */
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-normal: 1.6;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ---- Espaçamento (escala em rem, base 4px) ----------------------------- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+
+  /* ---- Raio e sombra -------------------------------------------------------- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(20, 36, 65, 0.07);
+  --shadow-md: 0 8px 24px rgba(20, 36, 65, 0.10);
+  --shadow-lg: 0 20px 48px rgba(20, 36, 65, 0.18);
+
+  /* ---- Transição ------------------------------------------------------------ */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.18s var(--ease);
+  --transition-base: 0.3s var(--ease);
+
+  /* ---- Layout ---------------------------------------------------------------- */
+  --container-width: 1200px;
+  --container-padding: 1.25rem;
+  --header-height: 76px;
+  --header-height-mobile: 64px;
+
+  /* ---- Camadas (z-index) ------------------------------------------------------ */
+  --z-header: 1000;
+  --z-mobile-menu: 950;
+  --z-whatsapp: 900;
+}

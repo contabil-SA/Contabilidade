@@ -1,0 +1,15 @@
+# Ignorar tudo por padrão
+# Exemplo de .gitignore para este projeto
+# Ignorar ambientes virtuais e arquivos de sistema
+venv/
+__pycache__/
+*.pyc
+node_modules/
+.DS_Store
+
+# Não ignorar os arquivos do site (index.html, script.js, styles.css)
+!index.html
+!script.js
+!styles.css
+
+# Se quiser ignorar outros arquivos, adicione aqui

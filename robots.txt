@@ -1,0 +1,29 @@
+# robots.txt da SA Contabilidade
+#
+# ATENCAO: os rastreadores so leem este arquivo na RAIZ do dominio:
+#   https://contabil-sa.github.io/robots.txt
+# Publicado em /Contabilidade/robots.txt ele NAO tem efeito.
+# Para usa-lo, copie-o para o repositorio "contabil-sa.github.io"
+# (site de usuario/organizacao do GitHub Pages), se esse repositorio existir
+# ou for criado na conta contabil-sa.
+
+# Regra geral: Googlebot, Bingbot e demais buscadores podem rastrear tudo.
+User-agent: *
+Allow: /
+
+# Busca do ChatGPT (indexacao para exibir o site nas respostas). Recomendado permitir.
+User-agent: OAI-SearchBot
+Allow: /
+
+# Acessos iniciados por um usuario no ChatGPT. A OpenAI informa que o robots.txt
+# pode nao se aplicar a esse agente; a regra apenas registra a intencao.
+User-agent: ChatGPT-User
+Allow: /
+
+# GPTBot (coleta para treinamento de modelos da OpenAI) fica permitido por padrao,
+# pela regra "*". Para impedir somente o treinamento, sem afetar a busca do
+# ChatGPT, remova o "#" das duas linhas abaixo:
+# User-agent: GPTBot
+# Disallow: /
+
+Sitemap: https://contabil-sa.github.io/Contabilidade/sitemap.xml
